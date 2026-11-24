@@ -38,8 +38,20 @@ timing.
 
 ## Install
 
-Needs `fcitx5` (with headers — Arch ships them in the main package), `cmake`,
-`extra-cmake-modules` and a C++20 compiler.
+### Arch / Omarchy (AUR)
+
+```sh
+yay -S fcitx5-accenthold
+```
+
+Then restart fcitx5 (log out and back in, or
+`systemctl --user restart omarchy-fcitx5` on Omarchy). Rebuild the package
+after major fcitx5 upgrades.
+
+### From source, into your home (no root)
+
+Needs `fcitx5` (with headers — Arch ships them in the main package), `cmake`
+and a C++20 compiler.
 
 ```sh
 ./install.sh
@@ -54,9 +66,8 @@ Re-run `./install.sh` after a major fcitx5 upgrade.
 
 ## Uninstall
 
-```sh
-./uninstall.sh
-```
+`yay -R fcitx5-accenthold` for the package, `./uninstall.sh` for the
+home install.
 
 ## Notes
 
