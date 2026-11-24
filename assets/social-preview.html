@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --bg1: #0b1a33;
+    --bg2: #12284d;
+    --ink: #eef3fb;
+    --muted: #93a7c6;
+    --accent: #4fa3ff;
+    --key: #1b3561;
+    --key-edge: #2c4f86;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 627px; }
+  body {
+    background: radial-gradient(ellipse at 75% 20%, var(--bg2) 0%, var(--bg1) 65%);
+    color: var(--ink);
+    font-family: "Noto Sans", sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(79,163,255,.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(79,163,255,.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .wrap { position: absolute; inset: 0; padding: 64px 72px; display: flex; flex-direction: column; }
+  .title {
+    font-family: "JetBrainsMono NF", monospace;
+    font-size: 30px; font-weight: 700; color: var(--accent); letter-spacing: .5px;
+  }
+  .tagline { font-size: 52px; font-weight: 700; line-height: 1.15; margin-top: 14px; }
+  .demo { display: flex; align-items: center; gap: 36px; margin-top: 56px; }
+  .keycap {
+    width: 128px; height: 128px; border-radius: 22px;
+    background: linear-gradient(180deg, var(--key-edge), var(--key));
+    border: 2px solid #3d64a3;
+    box-shadow: 0 10px 0 #0a1630, 0 14px 30px rgba(0,0,0,.45);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-family: "JetBrainsMono NF", monospace;
+  }
+  .keycap .k { font-size: 64px; font-weight: 700; line-height: 1; }
+  .keycap .h { font-size: 15px; color: var(--muted); margin-top: 8px; letter-spacing: 3px; }
+  .arrow { font-size: 44px; color: var(--muted); }
+  .roll { display: flex; align-items: center; gap: 22px; font-size: 84px; font-weight: 600; }
+  .roll .c { color: rgba(238,243,251,.32); }
+  .roll .c.on {
+    color: var(--ink);
+    text-decoration: underline; text-decoration-color: var(--accent);
+    text-decoration-thickness: 6px; text-underline-offset: 14px;
+  }
+  .roll .sep { font-size: 34px; color: rgba(147,167,198,.5); }
+  .caption { margin-top: 34px; font-size: 24px; color: var(--muted); }
+  .caption b { color: var(--ink); font-weight: 600; }
+  .foot {
+    margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end;
+    font-size: 21px; color: var(--muted);
+  }
+  .foot .url { font-family: "JetBrainsMono NF", monospace; color: var(--ink); }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="wrap">
+    <div class="title">fcitx5-accenthold</div>
+    <div class="tagline">Press-and-hold accents for Linux</div>
+    <div class="demo">
+      <div class="keycap"><div class="k">e</div><div class="h">HOLD</div></div>
+      <div class="arrow">→</div>
+      <div class="roll">
+        <span class="c on">é</span><span class="sep">›</span>
+        <span class="c">è</span><span class="sep">›</span>
+        <span class="c">ê</span><span class="sep">›</span>
+        <span class="c">ë</span>
+      </div>
+    </div>
+    <div class="caption">Hold a key, the letter rolls through its accents, <b>release to type</b>.</div>
+    <div class="foot">
+      <div>fcitx5 · Wayland · Omarchy / Hyprland · French &amp; German</div>
+      <div class="url">github.com/rtr-rep/fcitx5-accenthold</div>
+    </div>
+  </div>
+</body>
+</html>
