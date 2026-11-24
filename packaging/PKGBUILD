@@ -1,0 +1,24 @@
+# Maintainer: Philip Ritter <264198295+rtr-rep@users.noreply.github.com>
+pkgname=fcitx5-accenthold
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Hold a key to roll through accented variants, release to type (macOS-style accents for fcitx5)"
+arch=('x86_64' 'aarch64')
+url="https://github.com/rtr-rep/fcitx5-accenthold"
+license=('MIT')
+depends=('fcitx5')
+makedepends=('cmake')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('0227c97f5b6dc85bab570ae9c01cbeb4aa477b17f750950909e005eb0604d181')
+
+build() {
+  cmake -B build -S "$pkgname-$pkgver" \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_INSTALL_PREFIX=/usr
+  cmake --build build
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+  install -Dm644 "$pkgname-$pkgver/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

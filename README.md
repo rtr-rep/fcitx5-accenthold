@@ -48,6 +48,16 @@ Then restart fcitx5 (log out and back in, or
 `systemctl --user restart omarchy-fcitx5` on Omarchy). Rebuild the package
 after major fcitx5 upgrades.
 
+### Arch / Omarchy, without the AUR
+
+Builds the same pacman package as the AUR would:
+
+```sh
+git clone https://github.com/rtr-rep/fcitx5-accenthold
+cd fcitx5-accenthold/packaging
+makepkg -si
+```
+
 ### From source, into your home (no root)
 
 Needs `fcitx5` (with headers — Arch ships them in the main package), `cmake`
