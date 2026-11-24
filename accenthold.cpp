@@ -55,12 +55,11 @@ const std::unordered_map<fcitx::KeySym, std::vector<std::string>> &variants() {
         {FcitxKey_S, {"S", "ẞ"}},
         {FcitxKey_U, {"U", "Ù", "Û", "Ü"}},
         {FcitxKey_Y, {"Y", "Ÿ"}},
-        // Punctuation: guillemets, German and typographic quotes, dashes, currency.
+        // Punctuation: guillemets, German and typographic quotes, currency.
         {FcitxKey_less, {"<", "«", "‹"}},
         {FcitxKey_greater, {">", "»", "›"}},
         {FcitxKey_apostrophe, {"'", "’", "‘"}},
         {FcitxKey_quotedbl, {"\"", "„", "“", "”"}},
-        {FcitxKey_minus, {"-", "–", "—"}},
         {FcitxKey_dollar, {"$", "€", "£"}},
     };
     return map;

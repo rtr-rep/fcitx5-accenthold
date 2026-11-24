@@ -30,7 +30,6 @@ keyboard grab and no `input` group needed.
 | `<` `>` | « ‹ / » › |
 | `'` | ’ ‘ |
 | `"` | „ “ ” |
-| `-` | – — |
 | `$` | € £ |
 
 Capitals follow the same order (`S` → ẞ). Edit `variants()` in
@@ -63,7 +62,7 @@ Re-run `./install.sh` after a major fcitx5 upgrade.
 
 - Keys with variants are typed on release instead of press — that is how a
   tap is told apart from a hold. Holding them no longer autorepeats
-  (e.g. `-----`), same as on macOS.
+  (e.g. `eeeee`), same as on macOS.
 - Apps must talk to fcitx5 (GTK, Qt, terminals, Chromium/Electron with
   Wayland IME enabled). Apps that don't simply type normally.
 
