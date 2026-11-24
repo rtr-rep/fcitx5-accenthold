@@ -12,7 +12,7 @@ install -Dm644 accenthold.conf "$HOME/.local/share/fcitx5/addon/accenthold.conf"
 
 # fcitx5 only loads addon libraries from FCITX_ADDON_DIRS (default /usr/lib/fcitx5).
 service=omarchy-fcitx5.service
-if systemctl --user cat "$service" >/dev/null 2>&1; then
+if [ "$(systemctl --user show -p LoadState --value "$service" 2>/dev/null)" = loaded ]; then
     dropin="$HOME/.config/systemd/user/$service.d"
     mkdir -p "$dropin"
     printf '[Service]\nEnvironment=FCITX_ADDON_DIRS=%s:/usr/lib/fcitx5\n' \
